@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooted.Plugins", "Rooted.Plugins.csproj", "{7DD33A4D-ACC8-89E7-71CD-D9F6AA4F92D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooted.Editor.Plugins", "Rooted.Editor.Plugins.csproj", "{0F8B799F-5426-8B2A-E50D-9576EB89007D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DD33A4D-ACC8-89E7-71CD-D9F6AA4F92D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD33A4D-ACC8-89E7-71CD-D9F6AA4F92D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD33A4D-ACC8-89E7-71CD-D9F6AA4F92D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD33A4D-ACC8-89E7-71CD-D9F6AA4F92D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8B799F-5426-8B2A-E50D-9576EB89007D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8B799F-5426-8B2A-E50D-9576EB89007D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8B799F-5426-8B2A-E50D-9576EB89007D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8B799F-5426-8B2A-E50D-9576EB89007D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
