@@ -13,7 +13,7 @@ public class ItemScript : MonoBehaviour {
 	void Update () {
         //transform.rotation = Quaternion.Euler(transform.rotation.x + 10.0f * Time.deltaTime, transform.rotation.y + 10.0f, transform.rotation.z + 10.0f * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0, Time.time*360, 0);
-        Debug.Log(Time.time);
+       // Debug.Log(Time.time);
 
 		
 	}
