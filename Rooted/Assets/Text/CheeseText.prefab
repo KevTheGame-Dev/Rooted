@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114866950956412640}
   - component: {fileID: 222019657825618426}
   - component: {fileID: 114154057346213888}
+  - component: {fileID: 114675362043833806}
   m_Layer: 5
   m_Name: CheeseText
   m_TagString: Untagged
@@ -57,13 +58,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "If you can milk\nanything with nipples,\ncan you amke cheese \nw "
+  m_Text: "If you can milk\nanything with nipples,\ncan you make cheese \nfrom those
+    animals?"
 --- !u!114 &114316164931551266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +87,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114675362043833806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121058684050890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f62838f0da16241ab0f074bbaf97de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayTime: 6
 --- !u!114 &114866950956412640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,14 +148,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121058684050890}
   m_LocalRotation: {x: -0, y: 0.093982, z: -0, w: -0.9955739}
-  m_LocalPosition: {x: 59.06, y: 4.8600006, z: 257.77}
-  m_LocalScale: {x: 0.003990256, y: 0.0039902595, z: 0.0039902595}
+  m_LocalPosition: {x: 58.473, y: 4.9780006, z: 254.465}
+  m_LocalScale: {x: 0.0016047208, y: 0.0016047219, z: 0.0016047219}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -370.785, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.06, y: 4.86}
+  m_AnchoredPosition: {x: 58.473, y: 4.978}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

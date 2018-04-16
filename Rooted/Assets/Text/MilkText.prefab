@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114166604544782722}
   - component: {fileID: 222505291086708938}
   - component: {fileID: 114174941502992882}
+  - component: {fileID: 114877959368410072}
   m_Layer: 5
   m_Name: MilkText
   m_TagString: Untagged
@@ -73,9 +74,9 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 0
+    m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114877959368410072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1020269261554614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f62838f0da16241ab0f074bbaf97de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayTime: 0
 --- !u!222 &222505291086708938
 CanvasRenderer:
   m_ObjectHideFlags: 1

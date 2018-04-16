@@ -4,23 +4,56 @@ using UnityEngine;
 
 public class TextScript : MonoBehaviour {
 
-    GameObject playerObject;
-    public GameObject player;
+    GameObject player;  //the player object
+    GameObject playerCamera;    //the player's camera
+    float startTime;  //the time the text starts to be displayed at
+    public float displayTime = 0;  //the amount of time the text will be displayed
 
 	// Use this for initialization
-	void Start () {
-        playerObject = GameObject.FindGameObjectWithTag("Player");
-        
+	void Start ()
+    {
+        //initialize player
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerCamera = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).gameObject;
+
+        //initialize time values
+        startTime = Time.time;
+        if(displayTime <= 0)
+        {
+            displayTime = 5.0f;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
 
+        //check the time
+        CheckTime();
+
+        //display the text
+        DisplayText();
+
+	}
+
+    //displays the text in front of the player
+    void DisplayText()
+    {
+        //rotate the text towards the player
         transform.eulerAngles = new Vector3(0, player.transform.eulerAngles.y, 0);
 
-       // Quaternion rot = Quaternion.Euler(0, player.transform.rotation.y *Mathf.Rad2Deg, 0);
-       // Debug.Log("Rotation " + rot);
-       // transform.rotation = rot;
-        transform.position = new Vector3(playerObject.transform.position.x + player.transform.forward.x*5, playerObject.transform.position.y + 1, playerObject.transform.position.z + player.transform.forward.z*5);
-	}
+        //set the text's position in front of the player
+        transform.position = new Vector3(player.transform.position.x + player.transform.forward.x * 5, 
+                                         player.transform.position.y + 1, 
+                                         player.transform.position.z + player.transform.forward.z * 5);
+    }
+
+    //checks the display time
+    void CheckTime()
+    {
+        //check time
+        if (Time.time > startTime + displayTime)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
