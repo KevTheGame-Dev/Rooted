@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: c1e3c1f55df76b146837e92d6d7c6260
+timeCreated: 1523938206
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: pBotSlab
+    100002: pFullCornerInnerDeep
+    100004: pFullCornerInnerShallow
+    100006: pFullCornerOuterDeep
+    100008: pFullCornerOuterShallow
+    100010: pFullSlope
+    100012: pHalfBotCornerInnerDeep
+    100014: pHalfBotCornerInnerShallow
+    100016: pHalfBotCornerOuterDeep
+    100018: pHalfBotCornerOuterShallow
+    100020: pHalfBotSlope
+    100022: pHalfTopCornerInnerDeep
+    100024: pHalfTopCornerInnerShallow
+    100026: pHalfTopCornerOuterDeep
+    100028: pHalfTopCornerOuterShallow
+    100030: pHalfTopSlope
+    100032: pTopSlab
+    100034: //RootNode
+    400000: pBotSlab
+    400002: pFullCornerInnerDeep
+    400004: pFullCornerInnerShallow
+    400006: pFullCornerOuterDeep
+    400008: pFullCornerOuterShallow
+    400010: pFullSlope
+    400012: pHalfBotCornerInnerDeep
+    400014: pHalfBotCornerInnerShallow
+    400016: pHalfBotCornerOuterDeep
+    400018: pHalfBotCornerOuterShallow
+    400020: pHalfBotSlope
+    400022: pHalfTopCornerInnerDeep
+    400024: pHalfTopCornerInnerShallow
+    400026: pHalfTopCornerOuterDeep
+    400028: pHalfTopCornerOuterShallow
+    400030: pHalfTopSlope
+    400032: pTopSlab
+    400034: //RootNode
+    2300000: pBotSlab
+    2300002: pFullCornerInnerDeep
+    2300004: pFullCornerInnerShallow
+    2300006: pFullCornerOuterDeep
+    2300008: pFullCornerOuterShallow
+    2300010: pFullSlope
+    2300012: pHalfBotCornerInnerDeep
+    2300014: pHalfBotCornerInnerShallow
+    2300016: pHalfBotCornerOuterDeep
+    2300018: pHalfBotCornerOuterShallow
+    2300020: pHalfBotSlope
+    2300022: pHalfTopCornerInnerDeep
+    2300024: pHalfTopCornerInnerShallow
+    2300026: pHalfTopCornerOuterDeep
+    2300028: pHalfTopCornerOuterShallow
+    2300030: pHalfTopSlope
+    2300032: pTopSlab
+    3300000: pBotSlab
+    3300002: pFullCornerInnerDeep
+    3300004: pFullCornerInnerShallow
+    3300006: pFullCornerOuterDeep
+    3300008: pFullCornerOuterShallow
+    3300010: pFullSlope
+    3300012: pHalfBotCornerInnerDeep
+    3300014: pHalfBotCornerInnerShallow
+    3300016: pHalfBotCornerOuterDeep
+    3300018: pHalfBotCornerOuterShallow
+    3300020: pHalfBotSlope
+    3300022: pHalfTopCornerInnerDeep
+    3300024: pHalfTopCornerInnerShallow
+    3300026: pHalfTopCornerOuterDeep
+    3300028: pHalfTopCornerOuterShallow
+    3300030: pHalfTopSlope
+    3300032: pTopSlab
+    4300000: pTopSlab
+    4300002: pFullSlope
+    4300004: pFullCornerInnerShallow
+    4300006: pFullCornerOuterShallow
+    4300008: pHalfBotSlope
+    4300010: pHalfTopSlope
+    4300012: pHalfBotCornerInnerShallow
+    4300014: pFullCornerOuterDeep
+    4300016: pHalfBotCornerInnerDeep
+    4300018: pHalfTopCornerInnerShallow
+    4300020: pHalfTopCornerInnerDeep
+    4300022: pHalfTopCornerOuterShallow
+    4300024: pHalfTopCornerOuterDeep
+    4300026: pFullCornerInnerDeep
+    4300028: pBotSlab
+    4300030: pHalfBotCornerOuterShallow
+    4300032: pHalfBotCornerOuterDeep
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flat_checker1Material
+    second: {fileID: 2100000, guid: 2ad0aef43a339af48b72e37c9a42f091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: cbcd9c133bba1c3459d86948daee091a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: bc39efe3e3c27504fbc8e931d731590f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
