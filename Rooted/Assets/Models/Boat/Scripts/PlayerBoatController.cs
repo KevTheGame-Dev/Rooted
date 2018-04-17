@@ -28,6 +28,8 @@ public class PlayerBoatController : MonoBehaviour {
             aboveBoat += boatTransform.forward * -4;
             playerTransform.position = aboveBoat;
             playerTransform.rotation = boatTransform.rotation;
+            playerTransform.GetComponentInParent<Rigidbody>().angularVelocity = this.GetComponent<Rigidbody>().angularVelocity;
+            playerTransform.GetComponentInParent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity;
         }
         //------------------------------
         if(Input.GetKeyUp(KeyCode.F) && !inBoat)//If F is pressed and player is not in the boat
