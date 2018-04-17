@@ -24,7 +24,7 @@ public class PlayerBoatController : MonoBehaviour {
         if (inBoat)//This segment is the one that causes the boat to sink slowly. It should just be keeping the player locked to the boat's position
         {
             Vector3 aboveBoat = boatTransform.position;
-            aboveBoat.y += 1.5f;
+            aboveBoat.y += 2.5f;
             aboveBoat += boatTransform.forward * -4;
             playerTransform.position = aboveBoat;
             playerTransform.rotation = boatTransform.rotation;
