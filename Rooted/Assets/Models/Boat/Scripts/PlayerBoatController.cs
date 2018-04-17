@@ -12,6 +12,17 @@ public class PlayerBoatController : MonoBehaviour {
     public float enterDistance = 15;
     bool inBoat = false;
     
+    //Boat movement variables
+    public float MAX_SPEED = 3.0f;
+    public float MAX_ACCEL = 1.0f;
+    public float MAX_TURN = 5.0f;
+    public float MAX_BREAK = -0.5f;
+    float speed = 0;
+    float turnSpeed = 0;
+    float acceleration = 0;
+    float breakingAccel = 0;
+    Vector3 angularVelocity;
+
 	// Use this for initialization
 	void Start () {
         playerTransform = GameObject.Find("FPSController").transform;
@@ -20,9 +31,99 @@ public class PlayerBoatController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //------------------------------
-        if (inBoat)//This segment is the one that causes the boat to sink slowly. It should just be keeping the player locked to the boat's position
+        if (inBoat)
         {
+            if (Input.GetKey(KeyCode.W))//Forward
+            {
+                if(speed != MAX_SPEED)
+                {
+                    if(acceleration != MAX_ACCEL)
+                    {
+                        acceleration += 0.01f;
+                        if (acceleration > MAX_ACCEL) acceleration = MAX_ACCEL;
+                    }
+                    speed += acceleration;
+                    if (speed > MAX_SPEED) speed = MAX_SPEED;
+                }
+                Vector3 forward = boatTransform.forward * speed;
+                Debug.Log(speed);
+                angularVelocity += forward;
+            }
+            else if (Input.GetKey(KeyCode.S))//Back
+            {
+                if (speed != 0)
+                {
+                    if (acceleration != MAX_BREAK)
+                    {
+                        acceleration -= 0.01f;
+                        if (acceleration < MAX_BREAK) acceleration = MAX_BREAK;
+                    }
+                    speed += acceleration;
+                    if (speed > MAX_SPEED) speed = MAX_SPEED;
+                    if (speed < 0) speed = 0;
+                }
+                Vector3 forward = -boatTransform.forward * Mathf.Abs(speed);
+                angularVelocity += forward;
+            }
+
+            if (Input.GetKey(KeyCode.A))//Turn Left
+            {
+                if (turnSpeed != -MAX_TURN)
+                {
+                    turnSpeed -= 0.1f;
+                    if (turnSpeed < -MAX_TURN) turnSpeed = -MAX_TURN;
+                }
+                boatTransform.Rotate(0, turnSpeed, 0);
+
+                //BREAK A LITTLE BIT WHEN TURNING
+                if (speed != 0)
+                {
+                    if (acceleration != MAX_BREAK)
+                    {
+                        acceleration -= 0.005f;
+                        if (acceleration < MAX_BREAK) acceleration = MAX_BREAK;
+                    }
+                    speed += acceleration;
+                    if (speed > MAX_SPEED) speed = MAX_SPEED;
+                    if (speed < 0) speed = 0;
+                }
+                Vector3 forward = boatTransform.forward * speed;
+                angularVelocity += forward;
+            }
+            else if (Input.GetKey(KeyCode.D))//Turn Right
+            {
+                if (turnSpeed != MAX_TURN)
+                {
+                    turnSpeed += 0.1f;
+                    if (turnSpeed > MAX_TURN) turnSpeed = MAX_TURN;
+                }
+                boatTransform.Rotate(0, turnSpeed, 0);
+
+                //BREAK A LITTLE BIT WHEN TURNING
+                if (speed != 0)
+                {
+                    if (acceleration != MAX_BREAK)
+                    {
+                        acceleration -= 0.005f;
+                        if (acceleration < MAX_BREAK) acceleration = MAX_BREAK;
+                    }
+                    speed += acceleration;
+                    if (speed > MAX_SPEED) speed = MAX_SPEED;
+                    if (speed < 0) speed = 0;
+                }
+                Vector3 forward = boatTransform.forward * speed;
+                angularVelocity += forward;
+            }
+            //this.GetComponent<Rigidbody>().AddForce(angularVelocity);
+            boatTransform.position += angularVelocity;
+            //Decrement values when no input
+            if (turnSpeed > 0) turnSpeed -= 0.05f;
+            if (turnSpeed < 0) turnSpeed += 0.05f;
+            if (speed > 0) speed -= 0.005f;
+            if (speed < 0) speed += 0.001f;
+            acceleration = 0;
+
+
             Vector3 aboveBoat = boatTransform.position;
             aboveBoat.y += 2.5f;
             aboveBoat += boatTransform.forward * -4;
@@ -31,7 +132,6 @@ public class PlayerBoatController : MonoBehaviour {
             playerTransform.GetComponentInParent<Rigidbody>().angularVelocity = this.GetComponent<Rigidbody>().angularVelocity;
             playerTransform.GetComponentInParent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity;
         }
-        //------------------------------
         if(Input.GetKeyUp(KeyCode.F) && !inBoat)//If F is pressed and player is not in the boat
         {
             Debug.Log("Player attempted to enter boat");

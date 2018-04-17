@@ -29,22 +29,22 @@ public class BoatController : MonoBehaviour {
         {
             float baseForce = Physics.gravity.magnitude;
 
-            if (Mathf.Abs(boatTransform.position.y) - Mathf.Abs(oceanLevel + floatOffset) <= 0.01f)
+            if (Mathf.Abs(boatTransform.position.y - oceanLevel + floatOffset) <= 0.01f)
             {
                 //Debug.Log("Applying weak float force");
-                Vector3 pushUp = Vector3.up * (baseForce + 1);
+                Vector3 pushUp = Vector3.up * (baseForce + 4);
                 this.GetComponent<Rigidbody>().AddForce(pushUp);
             }
-            else if(Mathf.Abs(boatTransform.position.y) - Mathf.Abs(oceanLevel + floatOffset) <= 0.05f)
+            else if(Mathf.Abs(boatTransform.position.y - oceanLevel + floatOffset) <= 0.05f)
             {
                 //Debug.Log("Applying normal float force");
-                Vector3 pushUp = Vector3.up * (baseForce + 6);
+                Vector3 pushUp = Vector3.up * (baseForce + 9);
                 this.GetComponent<Rigidbody>().AddForce(pushUp);
             }
-            else if (Mathf.Abs(boatTransform.position.y) - Mathf.Abs(oceanLevel + floatOffset) > 0.1f)
+            else if (Mathf.Abs(boatTransform.position.y - oceanLevel + floatOffset) > 0.1f)
             {
                 //Debug.Log("Applying strong float force");
-                Vector3 pushUp = Vector3.up * (baseForce + 12);
+                Vector3 pushUp = Vector3.up * (baseForce + 30);
                 this.GetComponent<Rigidbody>().AddForce(pushUp);
             }
         }
