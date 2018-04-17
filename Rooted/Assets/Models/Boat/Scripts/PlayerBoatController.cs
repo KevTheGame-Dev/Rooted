@@ -13,10 +13,11 @@ public class PlayerBoatController : MonoBehaviour {
     bool inBoat = false;
     
     //Boat movement variables
-    public float MAX_SPEED = 3.0f;
-    public float MAX_ACCEL = 1.0f;
+    public float MAX_SPEED = 0.1f;
+    public float MAX_ACCEL = 0.01f;
     public float MAX_TURN = 5.0f;
-    public float MAX_BREAK = -0.5f;
+    public float MAX_BREAK_SPEED = -0.05f;
+    public float MAX_BREAK = -0.005f;
     float speed = 0;
     float turnSpeed = 0;
     float acceleration = 0;
@@ -60,7 +61,7 @@ public class PlayerBoatController : MonoBehaviour {
                     }
                     speed += acceleration;
                     if (speed > MAX_SPEED) speed = MAX_SPEED;
-                    if (speed < 0) speed = 0;
+                    if (speed < MAX_BREAK_SPEED) speed = MAX_BREAK_SPEED;
                 }
                 Vector3 forward = -boatTransform.forward * Mathf.Abs(speed);
                 angularVelocity += forward;
@@ -119,16 +120,19 @@ public class PlayerBoatController : MonoBehaviour {
             //Decrement values when no input
             if (turnSpeed > 0) turnSpeed -= 0.05f;
             if (turnSpeed < 0) turnSpeed += 0.05f;
-            if (speed > 0) speed -= 0.005f;
-            if (speed < 0) speed += 0.001f;
+            if (speed == 0) { }
+            else if (speed > 0) speed -= 0.005f;
+            else if (speed < 0) speed += 0.001f;
+            Debug.Log(speed);
             acceleration = 0;
+            angularVelocity = Vector3.zero;
 
 
             Vector3 aboveBoat = boatTransform.position;
             aboveBoat.y += 2.5f;
             aboveBoat += boatTransform.forward * -4;
             playerTransform.position = aboveBoat;
-            playerTransform.rotation = boatTransform.rotation;
+           // playerTransform.rotation = boatTransform.rotation;
             playerTransform.GetComponentInParent<Rigidbody>().angularVelocity = this.GetComponent<Rigidbody>().angularVelocity;
             playerTransform.GetComponentInParent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity;
         }
@@ -158,5 +162,7 @@ public class PlayerBoatController : MonoBehaviour {
             playerTransform.GetComponentInParent<Rigidbody>().mass = 1;
             playerTransform.GetComponentInParent<Rigidbody>().useGravity = true;
         }
+
+        Debug.Log("Velocity: " + angularVelocity);
     }
 }
