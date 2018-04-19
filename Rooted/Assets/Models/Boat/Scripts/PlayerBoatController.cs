@@ -47,7 +47,7 @@ public class PlayerBoatController : MonoBehaviour {
                     if (speed > MAX_SPEED) speed = MAX_SPEED;
                 }
                 Vector3 forward = boatTransform.forward * speed;
-                Debug.Log(speed);
+                //Debug.Log(speed);
                 angularVelocity += forward;
             }
             else if (Input.GetKey(KeyCode.S))//Back
@@ -116,14 +116,14 @@ public class PlayerBoatController : MonoBehaviour {
                 angularVelocity += forward;
             }
             //this.GetComponent<Rigidbody>().AddForce(angularVelocity);
-            boatTransform.position += angularVelocity;
+            boatTransform.position += angularVelocity.normalized * speed;
             //Decrement values when no input
             if (turnSpeed > 0) turnSpeed -= 0.05f;
             if (turnSpeed < 0) turnSpeed += 0.05f;
             if (speed == 0) { }
             else if (speed > 0) speed -= 0.005f;
             else if (speed < 0) speed += 0.001f;
-            Debug.Log(speed);
+            //Debug.Log(speed);
             acceleration = 0;
             angularVelocity = Vector3.zero;
 
