@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class DayNightScript : MonoBehaviour {
 
-    GameObject sun;
-    GameObject moon;
-    GameObject moonSphere;
+    private GameObject sun;
+    private GameObject moon;
+    private GameObject moonSphere;
+    [SerializeField]
+    private GameObject PLAYER;
     public float rotateSpeed = 0.001f;
+
+    private Vector3 rotateVector;
 
 	// Use this for initialization
 	void Start () {
-        this.sun = this.transform.GetChild(0).gameObject;
-        this.moon = this.transform.GetChild(1).gameObject;
-        this.moonSphere = this.transform.GetChild(2).gameObject;
+        sun = transform.GetChild(0).gameObject;
+        moon = transform.GetChild(1).gameObject;
+        moonSphere = transform.GetChild(2).gameObject;
         float moonLight = moon.transform.rotation.x;
-        moonSphere.transform.position = new Vector3(0, Mathf.Sin(moonLight) * 200, Mathf.Cos(moonLight) * 200);
-
+        rotateVector = new Vector3(rotateSpeed, 0, 0);
     }
 	
 	// Update is called once per frame
 	void Update () {
+        transform.position = PLAYER.transform.position;
         //rotate directional lights
-        sun.transform.Rotate(new Vector3(rotateSpeed, 0, 0));
-        moon.transform.Rotate(new Vector3(rotateSpeed, 0, 0));
+        sun.transform.Rotate(rotateVector);
+        moon.transform.Rotate(rotateVector);
 
         //rotate physical moon in sky
-        float moonLight = moon.transform.rotation.x + 100000;
-        moonSphere.transform.position = new Vector3(0, Mathf.Sin(moonLight) * 200, Mathf.Cos(moonLight) * 200);
+        moonSphere.transform.Rotate(rotateVector);
 	}
 }
