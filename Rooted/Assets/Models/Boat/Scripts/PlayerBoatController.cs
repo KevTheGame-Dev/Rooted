@@ -14,15 +14,16 @@ public class PlayerBoatController : MonoBehaviour {
     
     //Boat movement variables
     public float MAX_SPEED = 0.1f;
-    public float MAX_ACCEL = 0.01f;
+    public float MAX_ACCEL = 0.5f;
     public float MAX_TURN = 5.0f;
     public float MAX_BREAK_SPEED = -0.05f;
     public float MAX_BREAK = -0.005f;
+    public float FRICTION = 0.2f;
     float speed = 0;
     float turnSpeed = 0;
-    float acceleration = 0;
+    Vector3 acceleration = Vector3.zero;
     float breakingAccel = 0;
-    Vector3 angularVelocity;
+    Vector3 angularVelocity = Vector3.zero;
 
 	// Use this for initialization
 	void Start () {
@@ -38,94 +39,47 @@ public class PlayerBoatController : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.W))//Forward
             {
-                if(speed != MAX_SPEED)
-                {
-                    if(acceleration != MAX_ACCEL)
-                    {
-                        acceleration += 0.01f;
-                        if (acceleration > MAX_ACCEL) acceleration = MAX_ACCEL;
-                    }
-                    speed += acceleration;
-                    if (speed > MAX_SPEED) speed = MAX_SPEED;
-                }
-                Vector3 forward = boatTransform.forward * speed;
-                //Debug.Log(speed);
-                angularVelocity += forward;
+                this.acceleration = this.transform.forward * MAX_ACCEL;
             }
             else if (Input.GetKey(KeyCode.S))//Back
             {
-                if (speed != 0)
-                {
-                    if (acceleration != MAX_BREAK)
-                    {
-                        acceleration -= 0.01f;
-                        if (acceleration < MAX_BREAK) acceleration = MAX_BREAK;
-                    }
-                    speed += acceleration;
-                    if (speed > MAX_SPEED) speed = MAX_SPEED;
-                    if (speed < MAX_BREAK_SPEED) speed = MAX_BREAK_SPEED;
-                }
-                Vector3 forward = -boatTransform.forward * Mathf.Abs(speed);
-                angularVelocity += forward;
+                this.acceleration = this.transform.forward * MAX_BREAK;
             }
 
             if (Input.GetKey(KeyCode.A))//Turn Left
             {
                 if (turnSpeed != -MAX_TURN)
                 {
-                    turnSpeed -= 0.1f;
+                    turnSpeed -= 0.6f;
                     if (turnSpeed < -MAX_TURN) turnSpeed = -MAX_TURN;
                 }
                 boatTransform.Rotate(0, turnSpeed, 0);
-
-                //BREAK A LITTLE BIT WHEN TURNING
-                if (speed != 0)
-                {
-                    if (acceleration != MAX_BREAK)
-                    {
-                        acceleration -= 0.005f;
-                        if (acceleration < MAX_BREAK) acceleration = MAX_BREAK;
-                    }
-                    speed += acceleration;
-                    if (speed > MAX_SPEED) speed = MAX_SPEED;
-                    if (speed < 0) speed = 0;
-                }
-                Vector3 forward = boatTransform.forward * speed;
-                angularVelocity += forward;
+                
             }
             else if (Input.GetKey(KeyCode.D))//Turn Right
             {
                 if (turnSpeed != MAX_TURN)
                 {
-                    turnSpeed += 0.1f;
+                    turnSpeed += 0.6f;
                     if (turnSpeed > MAX_TURN) turnSpeed = MAX_TURN;
                 }
                 boatTransform.Rotate(0, turnSpeed, 0);
-
-                //BREAK A LITTLE BIT WHEN TURNING
-                if (speed != 0)
-                {
-                    if (acceleration != MAX_BREAK)
-                    {
-                        acceleration -= 0.005f;
-                        if (acceleration < MAX_BREAK) acceleration = MAX_BREAK;
-                    }
-                    speed += acceleration;
-                    if (speed > MAX_SPEED) speed = MAX_SPEED;
-                    if (speed < 0) speed = 0;
-                }
-                Vector3 forward = boatTransform.forward * speed;
-                angularVelocity += forward;
             }
-            //this.GetComponent<Rigidbody>().AddForce(angularVelocity);
-            boatTransform.position += angularVelocity.normalized * speed;
-            //Decrement values when no input
-            if (turnSpeed > 0) turnSpeed -= 0.05f;
-            if (turnSpeed < 0) turnSpeed += 0.05f;
-            if (speed == 0) { }
-            else if (speed > 0) speed -= 0.005f;
-            else if (speed < 0) speed += 0.001f;
-            //Debug.Log(speed);
+            this.angularVelocity += this.acceleration;
+
+            if(this.angularVelocity.magnitude > this.MAX_SPEED)
+            {
+                this.angularVelocity = this.angularVelocity.normalized * this.MAX_SPEED;
+            }
+
+            this.angularVelocity *= 1 - this.FRICTION;
+            if(this.angularVelocity.magnitude < 0.1)
+            {
+                this.angularVelocity = Vector3.zero;
+            }
+
+            this.transform.position += this.angularVelocity;
+            this.turnSpeed = 0;
 
             Vector3 aboveBoat = boatTransform.position;
             aboveBoat.y += 1.5f;
@@ -135,14 +89,7 @@ public class PlayerBoatController : MonoBehaviour {
             playerTransform.GetComponentInParent<Rigidbody>().angularVelocity = angularVelocity;
             playerTransform.GetComponentInParent<Rigidbody>().velocity = angularVelocity;
 
-
-
-
-
-            acceleration = 0;
-            angularVelocity = Vector3.zero;
-
-
+            this.acceleration = Vector3.zero;
             
         }
         if(Input.GetKeyUp(KeyCode.F) && !inBoat)//If F is pressed and player is not in the boat
@@ -171,7 +118,5 @@ public class PlayerBoatController : MonoBehaviour {
             playerTransform.GetComponentInParent<Rigidbody>().mass = 1;
             playerTransform.GetComponentInParent<Rigidbody>().useGravity = true;
         }
-
-        Debug.Log("Velocity: " + angularVelocity);
     }
 }
