@@ -28,7 +28,9 @@ public class PlayerBoatController : MonoBehaviour {
 	void Start () {
         playerTransform = GameObject.Find("FPSController").transform;
         boatTransform = this.transform;
-	}
+        this.GetComponent<Rigidbody>().freezeRotation = true;
+        this.GetComponent<Rigidbody>().useGravity = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -124,17 +126,24 @@ public class PlayerBoatController : MonoBehaviour {
             else if (speed > 0) speed -= 0.005f;
             else if (speed < 0) speed += 0.001f;
             //Debug.Log(speed);
+
+            Vector3 aboveBoat = boatTransform.position;
+            aboveBoat.y += 1.5f;
+            aboveBoat += boatTransform.forward * -1;
+            playerTransform.position = aboveBoat;
+            // playerTransform.rotation = boatTransform.rotation;
+            playerTransform.GetComponentInParent<Rigidbody>().angularVelocity = angularVelocity;
+            playerTransform.GetComponentInParent<Rigidbody>().velocity = angularVelocity;
+
+
+
+
+
             acceleration = 0;
             angularVelocity = Vector3.zero;
 
 
-            Vector3 aboveBoat = boatTransform.position;
-            aboveBoat.y += 2.5f;
-            aboveBoat += boatTransform.forward * -4;
-            playerTransform.position = aboveBoat;
-           // playerTransform.rotation = boatTransform.rotation;
-            playerTransform.GetComponentInParent<Rigidbody>().angularVelocity = this.GetComponent<Rigidbody>().angularVelocity;
-            playerTransform.GetComponentInParent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity;
+            
         }
         if(Input.GetKeyUp(KeyCode.F) && !inBoat)//If F is pressed and player is not in the boat
         {
@@ -156,7 +165,7 @@ public class PlayerBoatController : MonoBehaviour {
         else if (Input.GetKeyUp(KeyCode.F) && inBoat)//If F is pressed and player is not in the boat
         {
             Debug.Log("Player exited boat");
-            playerTransform.position = boatTransform.position + boatTransform.right * 8;
+            playerTransform.position = boatTransform.position + boatTransform.up * 4;
             playerTransform.GetComponentInParent<CharacterController>().enabled = true;
             inBoat = false;
             playerTransform.GetComponentInParent<Rigidbody>().mass = 1;
