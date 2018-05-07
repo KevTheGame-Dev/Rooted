@@ -42,6 +42,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+
+        // Stuff for Factorial Ring
+        public float RunSpeed
+        {
+            get { return m_RunSpeed; }
+            set { m_RunSpeed = value; }
+        }
+
+        public float WalkSpeed
+        {
+            get { return m_WalkSpeed; }
+            set { m_WalkSpeed = value; }
+        }
+
         // Use this for initialization
         private void Start()
         {

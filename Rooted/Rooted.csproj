@@ -228,6 +228,7 @@
     <Compile Include="Assets\ItemScript.cs" />
     <Compile Include="Assets\Models\Boat\Scripts\BoatController.cs" />
     <Compile Include="Assets\Models\Boat\Scripts\PlayerBoatController.cs" />
+    <Compile Include="Assets\Scripts\FactorialRing.cs" />
     <Compile Include="Assets\TextScript.cs" />
   </ItemGroup>
   <ItemGroup>
