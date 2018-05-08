@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4633685125689886}
+  - component: {fileID: 65742326549992104}
   m_Layer: 0
   m_Name: House Closed
-  m_TagString: Untagged
+  m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,6 +37,7 @@ GameObject:
   - component: {fileID: 4741790598075510}
   - component: {fileID: 33631146199000866}
   - component: {fileID: 23575387875841924}
+  - component: {fileID: 64295616988159234}
   m_Layer: 0
   m_Name: house 1
   m_TagString: Untagged
@@ -50,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576639667468156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.9, y: 17.23, z: -67.02}
+  m_LocalPosition: {x: 18.85, y: 17.16, z: -67.80757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4741790598075510}
@@ -111,3 +113,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1780468157254592}
   m_Mesh: {fileID: 4300000, guid: a677397bd4e330744bbe85bc568b335e, type: 3}
+--- !u!64 &64295616988159234
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780468157254592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a677397bd4e330744bbe85bc568b335e, type: 3}
+--- !u!65 &65742326549992104
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576639667468156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.83867, y: 16.140804, z: 20.419365}
+  m_Center: {x: -4.238082, y: 0.40735054, z: 0.69569016}

@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33786774525176584}
   - component: {fileID: 23631999795907816}
   - component: {fileID: 95422079492875440}
-  - component: {fileID: 64620397217137392}
+  - component: {fileID: 65302024696233710}
+  - component: {fileID: 114275627678361384}
   m_Layer: 0
   m_Name: Mayo
   m_TagString: Untagged
@@ -84,20 +85,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1596223264489292}
   m_Mesh: {fileID: 4300000, guid: 7b539bffeb4cdc0449a8941921ab771d, type: 3}
---- !u!64 &64620397217137392
-MeshCollider:
+--- !u!65 &65302024696233710
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1596223264489292}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 7b539bffeb4cdc0449a8941921ab771d, type: 3}
+  m_Size: {x: 0.017051334, y: 0.02662766, z: 0.021894313}
+  m_Center: {x: 0, y: 0.0033138301, z: 0}
 --- !u!95 &95422079492875440
 Animator:
   serializedVersion: 3
@@ -115,3 +114,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114275627678361384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596223264489292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a2cc1883e321d4dbb7772174b4cc2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1667150838228942, guid: 0c9c555e0e51ea34fb826ac376b8b9b3, type: 2}

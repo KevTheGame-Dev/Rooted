@@ -6,12 +6,14 @@ public class ItemScript : MonoBehaviour {
 
 
     public GameObject text; //text to display
+    public GameObject textField;
+    public string message;
 
 
 	// Use this for initialization
 	void Start ()
     {
-		
+		textField = GameObject.FindGameObjectWithTag("Message");
 	}
 	
 	// Update is called once per frame

@@ -334,10 +334,10 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\nick52\Desktop\Rooted\Rooted
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 64}
-    m_SelectedIDs: 92290000
-    m_LastClickedID: 10642
-    m_ExpandedIDs: 00000000a8270000142800004c2800001e290000722900002a2a00008e2a0000582b0000f82d00000c2e0000642e0000782e0000842e0000cc66010000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 6e300000
+    m_LastClickedID: 12398
+    m_ExpandedIDs: 000000000a2f00009c2f00000c30000058300000f23000002c310000ea3100005a340000a6340000b6340000c23400003c69010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -365,7 +365,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a8270000142800004c2800001e290000722900002a2a00008e2a0000582b0000f82d00000c2e0000642e0000782e0000842e0000cc660100
+    m_ExpandedIDs: 000000000a2f00006c2f00009c2f00000c30000058300000f23000002c310000ea310000483400005a340000a6340000b6340000c23400003c690100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -409,7 +409,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -480,10 +480,10 @@ MonoBehaviour:
     width: 377
     height: 552
   m_TreeViewState:
-    scrollPos: {x: 0, y: 19017}
-    m_SelectedIDs: ac8ffeff
-    m_LastClickedID: -94292
-    m_ExpandedIDs: 10bbfdff22e9fdffa6fbffff0000000092370000ce470100
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 32ebffff000000003e370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -533,14 +533,14 @@ MonoBehaviour:
     width: 1148
     height: 552
   m_SceneLighting: 1
-  lastFramingTime: 218.81294747784878
+  lastFramingTime: 1428.1887375974497
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 109.13026, y: 6.3991003, z: -13.635423}
+    m_Target: {x: 31.890451, y: 17.388699, z: -67.93834}
     speed: 2
-    m_Value: {x: 109.13026, y: 6.3991003, z: -13.635423}
+    m_Value: {x: 31.890451, y: 17.388699, z: -67.93834}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -563,13 +563,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.1744752, y: -0.6813882, z: 0.17240211, w: -0.68961054}
+    m_Target: {x: 0.022789, y: -0.97651297, z: 0.13145164, w: 0.16923864}
     speed: 2
-    m_Value: {x: -0.17447373, y: -0.68138254, z: 0.17240067, w: -0.68960476}
+    m_Value: {x: 0.022788793, y: -0.97650415, z: 0.13145044, w: 0.1692371}
   m_Size:
-    m_Target: 8.660948
+    m_Target: 45.20555
     speed: 2
-    m_Value: 8.660948
+    m_Value: 45.20555
   m_Ortho:
     m_Target: 0
     speed: 2

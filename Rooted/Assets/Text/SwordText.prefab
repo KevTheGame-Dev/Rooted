@@ -85,8 +85,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "You pick up the milk.\r\nThis should definitely be refrigerated, why is
-    it just sitting here?\r"
+  m_Text: "You pick up the Legendary Blade: Excalibur\u2026\r"
 --- !u!114 &114444901012392050
 MonoBehaviour:
   m_ObjectHideFlags: 1
