@@ -253,7 +253,7 @@ public class HouseScript : MonoBehaviour {
             }
             else if (time <= 10.0f)
             {
-                textField.text = "Sometimes the foolish ones end up in the North.";
+                textField.text = "Sometimes the foolish ones end up on the North.";
                 time += Time.deltaTime;
             }
             else
