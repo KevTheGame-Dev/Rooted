@@ -54,7 +54,7 @@ public class BeginningText : MonoBehaviour {
             {
                 messagesShown = true;
                 if(textField.text == "And I don’t even want to thinking about sprinting or jumping… " +
-                    "\nusing the shift and spacebar keys respectively...")
+                    "using the shift and spacebar keys respectively...")
                 {
                     textField.text = "";
                 }
@@ -69,6 +69,7 @@ public class BeginningText : MonoBehaviour {
     void UpdateTime()
     {
         time += Time.deltaTime;
+        Debug.Log(time);
     }
 
 
