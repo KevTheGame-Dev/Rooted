@@ -124,12 +124,12 @@ public class HouseScript : MonoBehaviour {
             else if (time <= 10.0f)
             {
                 textField.text = "Wait a minute, this cheese has an ARC!" +
-                    "\nI specifically wanted[low - poly cheese]!";
+                    "\nI specifically wanted [low - poly cheese]!";
             }
             else if (time <= 16.0f)
             {
                 textField.text = "You know how itchy my throat gets from the normal stuff!" +
-                    "\nGo get me some[low - poly cheese] from the island to the south.";
+                    "\nGo get me some [low - poly cheese] from the island to the south.";
             }
             else if (time <= 21.0f)
             {
@@ -165,7 +165,7 @@ public class HouseScript : MonoBehaviour {
             {
                 if(time <= 4.0f)
                 {
-                    textField.text = "Go get me some[low - poly cheese] from the island to the south.";
+                    textField.text = "Go get me some [low - poly cheese] from the island to the south.";
                     time += Time.deltaTime;
                 }
                 else
