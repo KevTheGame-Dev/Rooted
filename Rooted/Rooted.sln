@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooted.Plugins", "Rooted.Plugins.csproj", "{7DD33A4D-ACC8-89E7-71CD-D9F6AA4F92D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooted", "Rooted.csproj", "{CF04EB7F-8966-BDBC-8546-1AF94747FC57}"
