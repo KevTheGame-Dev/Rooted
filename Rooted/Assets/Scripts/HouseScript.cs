@@ -18,6 +18,9 @@ public class HouseScript : MonoBehaviour {
     bool displayFirstListMessage;
     bool displaySecondListMessage;
     bool displayLowPolyCheeseMessage;
+    bool displayMayoMessage;
+    bool displayAdventurerMessage;
+    bool displaySwordMessage;
     bool displayFinalMessage;
 
     bool displayMessages;
@@ -71,6 +74,7 @@ public class HouseScript : MonoBehaviour {
 
                 displayMessages = false;
                 textField.text = "";
+                time = 0.0f;
             }
 
 
@@ -98,7 +102,6 @@ public class HouseScript : MonoBehaviour {
                     time = 0.0f;
                     displayMessages = false;
                 }
-                
             }
         }
         else if(playerScript.firstListCollected)
@@ -127,11 +130,12 @@ public class HouseScript : MonoBehaviour {
             else
             {
                 //change player boolean
-                playerScript.onFirstList = false;
+                playerScript.firstListCollected = false;
                 playerScript.onLowPolyCheese = true;
 
                 displayMessages = false;
                 textField.text = "";
+                time = 0.0f;
             }
 
             //increment time
@@ -140,20 +144,98 @@ public class HouseScript : MonoBehaviour {
         else if(playerScript.onLowPolyCheese)
         {
             //display low-poly cheese messages
-
-
-            //increment time
-            time += Time.deltaTime;
+            if(playerScript.itemsCollected == 4)
+            {
+                playerScript.onLowPolyCheese = false;
+                playerScript.lowPolyCheeseCollected = true;
+            }
+            else
+            {
+                if(time <= 4.0f)
+                {
+                    textField.text = "Go get me some[low - poly cheese] from the island to the south.";
+                    time += Time.deltaTime;
+                }
+                else
+                {
+                    textField.text = "";
+                    time = 0.0f;
+                    displayMessages = false;
+                }
+            }
         }
         else if(playerScript.onSecondList)
         {
             //display second list messages
+            if (time <= 4.0f)
+            {
+                textField.text = "Oh good, you have the cheese.";
+            }
+            else if (time <= 10.0f)
+            {
+                textField.text = "Tell you what, while you’re out there, do you mind picking me up a few more items?";
+            }
+            else if (time <= 16.0f)
+            {
+                textField.text = "Nothing too difficult, just some more groceries.";
+            }
+            else if (time <= 23.0f)
+            {
+                textField.text = "I just need a [jar of mayonnaise], a [half-decomposed adventurer], and a [legendary blade: excalibur].";
+            }
+            else if(time <= 27.0f)
+            {
+                textField.text = "If you need help finding them just ask me!";
+            }
+            else
+            {
+                //change player boolean
+                playerScript.onSecondList = false;
+
+                playerScript.needMayo = true;
+                playerScript.needAdventurer = true;
+                playerScript.needSword = true;
+
+                displayMessages = false;
+                textField.text = "";
+                time = 0.0f;
+            }
+
+            //increment time
+            time += Time.deltaTime;
 
 
             //increment time
             time += Time.deltaTime;
         }
-        else if(playerScript.allItmesCollected)
+        else if(playerScript.needMayo)
+        {
+            if (time <= 4.0f)
+            {
+                textField.text = "Mayonnaise? Let me check my monster manual.";
+                time += Time.deltaTime;
+            }
+            else if (time <= 10.0f)
+            {
+                textField.text = "“The ferocious Mayonnaise builds its dwelling beneath the peaks of the tallest mountains.”";
+                time += Time.deltaTime;
+            }
+            else if (time <= 14.0f)
+            {
+                textField.text = "What? That’s what it says.";
+                time += Time.deltaTime;
+            }
+            else
+            {
+                textField.text = "";
+                time = 0.0f;
+                displayMessages = false;
+            }
+        }
+
+
+
+        else if(playerScript.allItemsCollected)
         {
             //display all items collected messages
 

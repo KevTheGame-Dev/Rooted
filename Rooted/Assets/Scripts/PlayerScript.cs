@@ -11,7 +11,13 @@ public class PlayerScript : MonoBehaviour {
     public bool onLowPolyCheese;   //if player is collecting low-poly cheese
     public bool lowPolyCheeseCollected;
     public bool onSecondList;  //if player is collecting the mayo, sword, and adventurer
-    public bool allItmesCollected; //if the player has collected all the items
+    public bool allItemsCollected; //if the player has collected all the items
+
+    public bool needMayo;
+    public bool needAdventurer;
+    public bool needSword;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +26,7 @@ public class PlayerScript : MonoBehaviour {
         onFirstList = false;
         onLowPolyCheese = false;
         onSecondList = false;
-        allItmesCollected = false;
+        allItemsCollected = false;
 	}
 	
 	// Update is called once per frame
