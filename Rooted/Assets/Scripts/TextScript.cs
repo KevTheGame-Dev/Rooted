@@ -10,6 +10,10 @@ public class TextScript : MonoBehaviour {
     float startTime;  //the time the text starts to be displayed at
     public float displayTime = 0;  //the amount of time the text will be displayed
     public Text textField;
+
+    [SerializeField]
+    private GameObject BACKGROUND;
+
     private string message;
 
 	// Use this for initialization
