@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114275627678361384}
   m_Layer: 0
   m_Name: Mayo
-  m_TagString: Untagged
+  m_TagString: Mayo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,3 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1667150838228942, guid: 0c9c555e0e51ea34fb826ac376b8b9b3, type: 2}
+  textField: {fileID: 0}
+  message: 
+  player: {fileID: 0}

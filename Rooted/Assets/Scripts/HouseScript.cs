@@ -11,6 +11,8 @@ public class HouseScript : MonoBehaviour {
     public GameObject houseClosed;
     public GameObject houseOpen;
 
+    public GameObject boat;
+
     Text textField;
     
 
@@ -34,6 +36,8 @@ public class HouseScript : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerScript>();
         textField = GameObject.FindGameObjectWithTag("Message").GetComponent<Text>();
+        boat = GameObject.FindGameObjectWithTag("Boat");
+        boat.SetActive(false);
         time = 0.0f;
 
         houseOpen.SetActive(false);
@@ -131,6 +135,9 @@ public class HouseScript : MonoBehaviour {
             {
                 textField.text = "Use the boat out back if you need to." +
                     "\nYou should be able to get in it by pushing F.";
+
+                //set boat as active
+                boat.SetActive(true);
             }
             else
             {
@@ -152,7 +159,7 @@ public class HouseScript : MonoBehaviour {
             if(playerScript.itemsCollected == 4)
             {
                 playerScript.onLowPolyCheese = false;
-                playerScript.lowPolyCheeseCollected = true;
+                playerScript.onSecondList = true;
             }
             else
             {
@@ -275,7 +282,7 @@ public class HouseScript : MonoBehaviour {
                 displayMessages = false;
             }
         }
-        else if(playerScript.allItemsCollected)
+        else
         {
             //display all items collected messages
             if(time <= 4.0f)

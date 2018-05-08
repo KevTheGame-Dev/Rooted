@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114326014435005440}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,3 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1015766362964452, guid: 560385883aff8f74c8e8bee300e262b0, type: 2}
+  textField: {fileID: 0}
+  message: 
+  player: {fileID: 0}

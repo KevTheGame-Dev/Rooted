@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Message
   - House
+  - Adventurer
+  - Sword
+  - Mayo
+  - Boat
   layers:
   - Default
   - TransparentFX

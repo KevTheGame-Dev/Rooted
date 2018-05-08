@@ -38,5 +38,13 @@ public class PlayerScript : MonoBehaviour {
     public void IncrementItemsCollected()
     {
         itemsCollected++;
+
+        //check if all items were collected
+        if(!needAdventurer && !needMayo && !needSword && onSecondList)
+        {
+            allItemsCollected = true;
+        }
+        
+
     }
 }

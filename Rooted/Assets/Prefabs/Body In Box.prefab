@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 114706340217434102}
   m_Layer: 0
   m_Name: Body In Box
-  m_TagString: Untagged
+  m_TagString: Adventurer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -867,6 +867,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  textField: {fileID: 0}
+  message: 
+  player: {fileID: 0}
 --- !u!114 &114706340217434102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -879,3 +882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1080483033697264, guid: bbbe66c0a9b6a2845a06a16428c7f093, type: 2}
+  textField: {fileID: 0}
+  message: 
+  player: {fileID: 0}
