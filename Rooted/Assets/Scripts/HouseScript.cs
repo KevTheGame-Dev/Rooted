@@ -1,0 +1,181 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HouseScript : MonoBehaviour {
+
+    GameObject player;
+    PlayerScript playerScript;
+
+    Text textField;
+    
+
+    float time;
+
+
+    bool displayBeginningMessages;
+    bool displayFirstListMessage;
+    bool displaySecondListMessage;
+    bool displayLowPolyCheeseMessage;
+    bool displayFinalMessage;
+
+    bool displayMessages;
+
+
+	// Use this for initialization
+	void Start () {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = player.GetComponent<PlayerScript>();
+        textField = GameObject.FindGameObjectWithTag("Message").GetComponent<Text>();
+        time = 0.0f;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if(displayMessages)
+        {
+            DisplayMessages();
+        }
+	}
+
+    //displays the correct meesages
+    void DisplayMessages()
+    {
+        //check which message to display
+        if(playerScript.onNoList)
+        {
+            //display the opening messages
+            if (time <= 5.0f)
+            {
+                textField.text = "Out all night drinking again, honey?" +
+                    "\nYou know I can’t bear to see you like this.";
+            }
+            else if (time <= 10.0f)
+            {
+                textField.text = "Tell you what, go out and get some groceries while you’re getting over your hangover.";
+            }
+            else if (time <= 14.0f)
+            {
+                textField.text = "I don’t care that the sun hurts your eyes!";
+            }
+            else if (time <= 19.0f)
+            {
+                textField.text = "I’m not letting you inside this house until you get some [milk], [eggs], and [cheese]!";
+            }
+            else
+            {
+                //change player boolean
+                playerScript.onNoList = false;
+                playerScript.onFirstList = true;
+
+                displayMessages = false;
+                textField.text = "";
+            }
+
+
+            //increment time
+            time += Time.deltaTime;
+        }
+        else if(playerScript.onFirstList)
+        {
+            if(playerScript.itemsCollected == 3)
+            {
+                playerScript.firstListCollected = true;
+                playerScript.onFirstList = false;
+            }
+            else
+            {
+                if(time <= 4.0f)
+                {
+                    textField.text = "Go get the groceries and then you can come into the house.";
+                    time += Time.deltaTime;
+
+                }
+                else
+                {
+                    textField.text = "";
+                    time = 0.0f;
+                    displayMessages = false;
+                }
+                
+            }
+        }
+        else if(playerScript.firstListCollected)
+        {
+            //display first list messages
+            if (time <= 4.0f)
+            {
+                textField.text = "Took you long enough!" +
+                    "\nWelcome hom…";
+            }
+            else if (time <= 10.0f)
+            {
+                textField.text = "Wait a minute, this cheese has an ARC!" +
+                    "\nI specifically wanted[low - poly cheese]!";
+            }
+            else if (time <= 16.0f)
+            {
+                textField.text = "You know how itchy my throat gets from the normal stuff!" +
+                    "\nGo get me some[low - poly cheese] from the island to the south.";
+            }
+            else if (time <= 21.0f)
+            {
+                textField.text = "Use the boat out back if you need to." +
+                    "\nYou should be able to get in it by pushing F.";
+            }
+            else
+            {
+                //change player boolean
+                playerScript.onFirstList = false;
+                playerScript.onLowPolyCheese = true;
+
+                displayMessages = false;
+                textField.text = "";
+            }
+
+            //increment time
+            time += Time.deltaTime;
+        }
+        else if(playerScript.onLowPolyCheese)
+        {
+            //display low-poly cheese messages
+
+
+            //increment time
+            time += Time.deltaTime;
+        }
+        else if(playerScript.onSecondList)
+        {
+            //display second list messages
+
+
+            //increment time
+            time += Time.deltaTime;
+        }
+        else if(playerScript.allItmesCollected)
+        {
+            //display all items collected messages
+
+
+            //increment time
+            time += Time.deltaTime;
+        }
+
+        
+
+
+    }
+
+
+
+    //checks for collisions
+    void OnTriggerEnter(Collider collision)
+    {
+        //check if player collided
+        if (collision.gameObject.tag == "Player")
+        {
+            displayMessages = true;
+        }
+    }
+}
