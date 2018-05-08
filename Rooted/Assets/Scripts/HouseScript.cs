@@ -8,6 +8,9 @@ public class HouseScript : MonoBehaviour {
     GameObject player;
     PlayerScript playerScript;
 
+    public GameObject houseClosed;
+    public GameObject houseOpen;
+
     Text textField;
     
 
@@ -32,6 +35,8 @@ public class HouseScript : MonoBehaviour {
         playerScript = player.GetComponent<PlayerScript>();
         textField = GameObject.FindGameObjectWithTag("Message").GetComponent<Text>();
         time = 0.0f;
+
+        houseOpen.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -232,21 +237,64 @@ public class HouseScript : MonoBehaviour {
                 displayMessages = false;
             }
         }
-
-
-
+        else if(playerScript.needAdventurer)
+        {
+            if (time <= 4.0f)
+            {
+                textField.text = "An adventurer? I know a lot about those.";
+                time += Time.deltaTime;
+            }
+            else if (time <= 10.0f)
+            {
+                textField.text = "Sometimes the foolish ones end up in the North.";
+                time += Time.deltaTime;
+            }
+            else
+            {
+                textField.text = "";
+                time = 0.0f;
+                displayMessages = false;
+            }
+        }
+        else if (playerScript.needSword)
+        {
+            if (time <= 5.0f)
+            {
+                textField.text = "Excalibur? I think I remember something about an old myth.";
+                time += Time.deltaTime;
+            }
+            else if (time <= 10.0f)
+            {
+                textField.text = "Something about a girl? A woman? A lady?";
+                time += Time.deltaTime;
+            }
+            else
+            {
+                textField.text = "";
+                time = 0.0f;
+                displayMessages = false;
+            }
+        }
         else if(playerScript.allItemsCollected)
         {
             //display all items collected messages
-
-
-            //increment time
-            time += Time.deltaTime;
+            if(time <= 4.0f)
+            {
+                textField.text = "Finally! Welcome home dear.";
+                time += Time.deltaTime;
+            }
+            else if(time <= 8.0f)
+            {
+                textField.text = "Come in and give your honey a kiss.";
+                time += Time.deltaTime;
+            }
+            else
+            {
+                textField.text = "";
+                houseClosed.SetActive(false);
+                houseOpen.SetActive(true);
+            }
         }
-
-        
-
-
     }
 
 
