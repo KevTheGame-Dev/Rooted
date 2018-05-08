@@ -233,6 +233,7 @@
     <Compile Include="Assets\Scripts\BeginningText.cs" />
     <Compile Include="Assets\Scripts\DayNightScript.cs" />
     <Compile Include="Assets\Scripts\FactorialRing.cs" />
+    <Compile Include="Assets\Scripts\HouseScript.cs" />
     <Compile Include="Assets\Scripts\ItemScript.cs" />
     <Compile Include="Assets\Scripts\TextScript.cs" />
   </ItemGroup>
