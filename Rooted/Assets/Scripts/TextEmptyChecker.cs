@@ -19,6 +19,6 @@ public class TextEmptyChecker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        PANEL.SetActive(textbox.text != "");
+        //PANEL.SetActive(textbox.text != "");
 	}
 }

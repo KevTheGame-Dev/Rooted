@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MountainIsland.unity
+- path: Assets/Scenes/BlockyIsland.unity
   isLoaded: 1
   isActive: 1
