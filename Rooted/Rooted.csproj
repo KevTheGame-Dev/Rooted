@@ -227,12 +227,14 @@
   <ItemGroup>
     <Compile Include="Assets\GE Common Assets\GE Toggle Full Screen\Scripts\GE_ToggleFullScreenUI.cs" />
     <Compile Include="Assets\GE Common Assets\Scripts\GE_UIResponder.cs" />
-    <Compile Include="Assets\ItemScript.cs" />
     <Compile Include="Assets\Models\Boat\Scripts\BoatController.cs" />
     <Compile Include="Assets\Models\Boat\Scripts\PlayerBoatController.cs" />
+    <Compile Include="Assets\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\BeginningText.cs" />
     <Compile Include="Assets\Scripts\DayNightScript.cs" />
     <Compile Include="Assets\Scripts\FactorialRing.cs" />
-    <Compile Include="Assets\TextScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScript.cs" />
+    <Compile Include="Assets\Scripts\TextScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GE Common Assets\Readme.txt" />

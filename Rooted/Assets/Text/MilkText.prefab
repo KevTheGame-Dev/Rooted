@@ -80,7 +80,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Got ___?
+  m_Text: "You pick up the milk.\r\nThis should definitely be refrigerated, why is
+    it just sitting here?\r"
 --- !u!114 &114348278412983732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayTime: 0
+  textField: {fileID: 0}
 --- !u!222 &222505291086708938
 CanvasRenderer:
   m_ObjectHideFlags: 1

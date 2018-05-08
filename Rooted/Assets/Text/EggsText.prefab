@@ -64,7 +64,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Suck One
+  m_Text: "You pick up the eggs.\r\nYep, these are eggs alright.\r"
 --- !u!114 &114694542945016258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayTime: 0
+  textField: {fileID: 0}
 --- !u!114 &114972143219177092
 MonoBehaviour:
   m_ObjectHideFlags: 1

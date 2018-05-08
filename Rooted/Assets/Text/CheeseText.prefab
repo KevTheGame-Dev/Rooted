@@ -64,8 +64,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "If you can milk\nanything with nipples,\ncan you make cheese \nfrom those
-    animals?"
+  m_Text: "You pick up the cheese.\r\nWait, why is there a wedge of cheese on this
+    island?\r"
 --- !u!114 &114316164931551266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayTime: 6
+  textField: {fileID: 0}
 --- !u!114 &114866950956412640
 MonoBehaviour:
   m_ObjectHideFlags: 1
