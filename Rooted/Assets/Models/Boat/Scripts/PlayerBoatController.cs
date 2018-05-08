@@ -29,8 +29,8 @@ public class PlayerBoatController : MonoBehaviour {
 	void Start () {
         playerTransform = GameObject.Find("FPSController").transform;
         boatTransform = this.transform;
-        this.GetComponent<Rigidbody>().freezeRotation = true;
-        this.GetComponent<Rigidbody>().useGravity = false;
+        //this.GetComponent<Rigidbody>().freezeRotation = true;
+        //this.GetComponent<Rigidbody>().useGravity = false;
     }
 	
 	// Update is called once per frame
